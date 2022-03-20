@@ -14,7 +14,8 @@
     color: #323232;
     font-size: 18px;
     gap:25px;
-    padding: 20px
+    padding: 20px;
+    z-index: 11;
 }
 .link{
     color: #323232;
