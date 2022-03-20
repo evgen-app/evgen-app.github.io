@@ -2,7 +2,7 @@
     position: fixed;
     left: 0;
     top:0;
-    z-index: 100;
+    z-index: 0;
     background: #fff;
     border-radius: 0px 0px 15px 15px;
     border: 1px solid #EEEEEE;
@@ -26,16 +26,81 @@
 }
 .content{
     margin-top: 100px;
+
 }
 .main{
-    margin-top: 20%;
+    padding-top: 20%;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
 }
 .solution{
-    margin-top: 21%;
+    padding-top: 21%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.ilText{
+    position: relative;
+    top:-200px;
+    left: -40%
+}
+.ilArrow{
+    user-select: none;
+    position: relative;
+    width: 65%;
+}
+.miText{
+    position: relative;
+    top:-510px;
+    left: 20%
+}
+.miArrow{
+    user-select: none;
+    transform: rotate(140deg);
+    position: relative;
+    width: 65%;
+    top: -250px;
+    left: -40%
+}
+.denText{
+    position:relative;
+    top: -200px;
+    left: 30%
+
+}
+.denArrow{
+    user-select: none;
+    transform: scale(-1, 1) rotate(-25deg);
+    position: relative;
+    width: 65%;
+    left: -30%;
+    top: -55px
+
+}
+.avatar{
+    user-select: none;
+    width: 50%;
+    cursor: pointer;
+    z-index: 10;
+}
+.avatar:hover{
+    width: 60%;
+    transition: 0.3s;
+    opacity: 0.7;
+}
+.person{
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.team{
+    font-family: 'Inconsolata', monospace;
+    color: #323232;
+    padding-top: 21%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -46,6 +111,14 @@
     flex-direction: row;
     gap:10px;
     margin-top:5%;
+}
+.carouselAvatar{
+    display: flex;
+    flex-direction: row;
+    gap:10px;
+    margin-top:5%;
+    justify-content: center;
+    align-items: center;
 }
 .card{
     font-family: 'Inconsolata', monospace;
@@ -59,12 +132,38 @@
     padding-right: 100px;
     padding-bottom: 40px;
 }
+.card:hover{
+    border-radius: 15px;
+    padding-left: 110px;
+    padding-right: 110px;
+    padding-bottom: 50px;
+    padding-top: 10px;
+}
 .card_grade{
     display: flex;
     flex-direction: row;
     align-items: center;
 }
+.formWrapper{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap:10px;
+}
+.inp{
+    font-family: 'Inconsolata', monospace;  
+    font-size: 18px;
+    background: #FFFFFF;
+    border: 1px solid #EEEEEE;
+    box-sizing: border-box;
+    border-radius: 15px;
+    outline: none;
+    padding:15px;
+    width: 100%;
+}
 .btn{
+    user-select: none;
+
     background: #6F39B5;
     border-radius: 10px;
     font-family: 'Montserrat', sans-serif;
@@ -78,6 +177,89 @@
 .btn:hover{
     opacity: 0.5;
 }
+.socMedia{
+    width: 70%;
+}
+.socMedia:hover{
+    width: 85%;
+}
+.copyright{
+    position: relative;
+    margin-right: 40%;  
+}
+
+.contacts{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.quest-form{
+    padding-top: 5%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap:25px;
+    margin-bottom: 10%;
+}
+.ring{
+    position: absolute;
+    z-index: -1;
+}
+.modal{
+    position: fixed;
+
+    z-index: 101;
+    width: 100%;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: -100px;
+    margin-left: -10px;
+    overflow-y: scroll;
+}
+.modalCard{
+    padding: 25px;
+    margin-top: 350px;
+    background: #FFFFFF;
+    border: 1px solid #EEEEEE;
+    border-radius: 15px;
+    z-index: 102;
+    background-color: #fff ;
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#modalButton{
+    margin-left:90%;
+    border:none;
+    outline: none;
+    cursor: pointer;
+    background-color: white;
+}
+#modalButton:hover{
+    opacity: 0.6;
+}
+
+footer{
+    padding: 10px;
+    background: #FFFFFF;
+    border: 1px solid #EEEEEE;
+    box-sizing: border-box;
+    border-radius: 15px 15px 0px 0px;
+    width: 100%;
+    right: 0;
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 25px;
+}
 h1{
     font-family: 'Montserrat', sans-serif;
 }
@@ -88,4 +270,29 @@ h2{
 
 body{
     background: #FAFAFA;
+    overflow-x: hidden;
+    max-height: 2700px;
 }
+*{
+    scroll-behavior: smooth;
+    outline: none;
+    transition: 0.3s;
+    color: #323232;
+    font-family: 'Inconsolata', monospace;
+}
+
+html::-webkit-scrollbar, .modal::-webkit-scrollbar {
+    width: 10px;
+    background-color: #f9f9fd;
+  }
+  
+html::-webkit-scrollbar-thumb, .modal::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background-color: #FFCB7F;
+  }
+  
+html::-webkit-scrollbar-track,  .modal::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.2);
+    border-radius: 10px;
+    background-color: #f9f9fd;
+  }
